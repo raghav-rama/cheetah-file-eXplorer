@@ -1,0 +1,6 @@
+.vscode
+.yarn
+dist
+*.lock
+*.md
+.\src-tauri\target\**
