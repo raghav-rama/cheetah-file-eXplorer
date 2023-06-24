@@ -22,6 +22,10 @@ export const ListDiskDrives = () => {
     });
   }
 
+  React.useEffect(() => {
+    listDiskDrives();
+  }, []);
+
   const handleDiskDriveClick = async (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
     drive: IDrive
@@ -43,7 +47,7 @@ export const ListDiskDrives = () => {
 
   return (
     <>
-      <button onClick={listDiskDrives}>List Disk Drives</button>
+      {/* <button onClick={listDiskDrives}>List Disk Drives</button> */}
       <div className="disk-drives">
         {diskDrives?.map(drive => {
           return (

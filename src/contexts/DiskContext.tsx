@@ -9,6 +9,8 @@ interface IFiles {
 export type FileType = IFiles;
 
 interface IDisk {
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
   history: string;
   setHistory: React.Dispatch<React.SetStateAction<string>>;
   fileList: IFiles[];
@@ -18,6 +20,8 @@ interface IDisk {
 export type DiskContextType = IDisk;
 
 export const DiskContext = React.createContext<DiskContextType>({
+  search: '',
+  setSearch: () => {},
   history: '',
   setHistory: () => {},
   fileList: [],
@@ -31,12 +35,20 @@ type ChildrenType = {
 export const DiskProvider = ({
   children,
 }: ChildrenType): React.ReactElement => {
+  const [search, setSearch] = React.useState<string>('');
   const [fileList, setFileList] = React.useState<IFiles[]>([]);
   const [history, setHistory] = React.useState<string>('');
   return (
     <>
       <DiskContext.Provider
-        value={{ history, setHistory, fileList, setFileList }}
+        value={{
+          history,
+          setHistory,
+          fileList,
+          setFileList,
+          search,
+          setSearch,
+        }}
       >
         {children}
       </DiskContext.Provider>
