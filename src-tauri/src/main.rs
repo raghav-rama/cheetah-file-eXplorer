@@ -7,6 +7,7 @@ pub mod utils;
 use disk_io::list_disk_drives::list_disk_drives;
 use disk_io::list_disk_drives::MyState;
 use disk_io::list_files::list_files;
+use disk_io::search::search;
 
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
@@ -20,7 +21,8 @@ fn main() {
         .invoke_handler(tauri::generate_handler![
             greet,
             list_disk_drives,
-            list_files
+            list_files,
+            search,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
