@@ -18,3 +18,4 @@ This template should help get you started developing with Tauri, React and Types
 - `yarn tauri dev`
 
 - Note: You need to have yarn and cargo installed
+- [Canva](https://www.canva.com/design/DAFmtTHPFVg/yWKiivcGOjqX9n5ACvd5pw/edit?utm_content=DAFmtTHPFVg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
